@@ -4,6 +4,7 @@ import slide1 from "../assets/image1.jpg"
 import slide2 from "../assets/image2.jpg"
 import slide3 from "../assets/image3.jpg"
 import Navbar from "../components/Navbar"
+import Footer from "../components/Footer";
 
 function Home() {
   const slides = [slide1, slide2, slide3]
@@ -67,10 +68,10 @@ function Home() {
   }
 
   return (
-    <div className="bg-neutral-900 text-white min-h-screen">
+    <div className="bg-neutral-900 text-white min-h-screen flex flex-col">
       <Navbar lang={lang} setLang={setLang} />
-
-      <main className="flex flex-col items-center justify-center p-6 space-y-8">
+  
+      <main className="flex flex-col items-center justify-center p-6 space-y-8 flex-grow">
         <div className="bg-neutral-800 p-6 rounded-lg shadow-md text-center max-w-2xl w-full">
           <h1 className="text-4xl font-bold mb-2">{text[lang].heading}</h1>
           <p className="text-lg text-gray-100 pt-3">{text[lang].intro}</p>
@@ -118,6 +119,7 @@ function Home() {
           {text[lang].play}
         </Link>
       </main>
+      <Footer />
     </div>
   )
 }

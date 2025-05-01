@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function About() {
   const [lang, setLang] = useState("en");
@@ -29,29 +30,31 @@ function About() {
   };
 
   return (
-    <div className="bg-neutral-900 text-white min-h-screen">
+    <div className="bg-neutral-900 text-white min-h-screen flex flex-col">
       <Navbar lang={lang} setLang={setLang} />
-
-      <main className="mx-auto px-6 md:px-32 lg:px-64 space-y-10 py-10">
+  
+      <main className="mx-auto px-6 md:px-32 lg:px-64 space-y-10 py-10 flex-grow">
         <h1 className="text-5xl font-bold text-center">{text[lang].heading1}</h1>
-
+  
         <div className="bg-neutral-800 p-6 rounded-lg shadow-md">
           <h2 className="text-2xl font-semibold mb-2">{text[lang].subheading1}</h2>
           <p className="text-gray-100">{text[lang].description}</p>
         </div>
-
+  
         <div className="bg-neutral-800 p-6 rounded-lg shadow-md">
           <h2 className="text-2xl font-semibold mb-2">{text[lang].subheading2}</h2>
           <p className="text-gray-100 mb-4">{text[lang].description1}</p>
           <p className="text-gray-100">{text[lang].description2}</p>
         </div>
-
+  
         <div className="bg-neutral-800 p-6 rounded-lg shadow-md">
           <h2 className="text-2xl font-semibold mb-2">{text[lang].subheading3}</h2>
           <p className="text-gray-100 mb-4">{text[lang].description3}</p>
           <p className="text-gray-100">{text[lang].description4}</p>
         </div>
       </main>
+  
+      <Footer />
     </div>
   );
 }
