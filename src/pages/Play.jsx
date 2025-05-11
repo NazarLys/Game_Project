@@ -1,18 +1,11 @@
-import React from 'react';
+import { useEffect } from 'react';
 
 const Play = () => {
-  return (
-    <div className="flex justify-center items-center h-screen bg-black">
-      <iframe
-        src="/game/Table_of_Deceit.html"
-        width="960"
-        height="540"
-        frameBorder="0"
-        allowFullScreen
-        title="Table of Deceit"
-      ></iframe>
-    </div>
-  );
+  useEffect(() => {
+    window.location.href = "/game/Table_of_Deceit.html";
+  }, []);
+
+  return <p>Redirecting to game...</p>;
 };
 
 export default Play;
