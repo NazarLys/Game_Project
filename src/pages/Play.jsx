@@ -1,25 +1,18 @@
-import { useState } from "react";
-import Navbar from "../components/Navbar";
+import React from 'react';
 
-function About() {
-  const [lang, setLang] = useState("en");
-  const text = {
-    en: {
-     txt: "The game is supposed to be here.",
-  },
-    pl: {
-     txt: "Gra powinna się wkrótce ukazać.",
-    },
-  };
-    return (
-    <div className="bg-neutral-900 text-white min-h-screen">
-      <Navbar lang={lang} setLang={setLang} />
-
-      <div className="min-h-screen mx-auto bg-neutral-900 text-white text-left text-lg leading-relaxed px-10 space-y-3">
-       <h1 className="text-6xl font-bold text-center pt-100">{text[lang].txt}.</h1>
-      </div>
+const Play = () => {
+  return (
+    <div className="flex justify-center items-center h-screen bg-black">
+      <iframe
+        src="/game/Table_of_Deceit.html"
+        width="960"
+        height="540"
+        frameBorder="0"
+        allowFullScreen
+        title="Table of Deceit"
+      ></iframe>
     </div>
-    )
-  }
-  
-  export default About
+  );
+};
+
+export default Play;
