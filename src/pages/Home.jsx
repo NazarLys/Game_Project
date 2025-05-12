@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar"
 import Footer from "../components/Footer";
 
 function Home() {
-  const slides = [slide1, slide2, slide3]
+  const slides = [slide1, slide2]
   const [slideIndex, setSlideIndex] = useState(0)
   const [lang, setLang] = useState("en")
 
