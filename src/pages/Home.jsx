@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
 import { useState, useEffect } from "react"
-import slide1 from "../assets/image1.jpg"
-import slide2 from "../assets/image2.jpg"
-import slide3 from "../assets/image3.jpg"
+import slide1 from "../assets/image1.png"
+import slide2 from "../assets/image2.png"
+import slide3 from "../assets/image3.png"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer";
 
@@ -27,19 +27,19 @@ function Home() {
       deceiveText:
         "Grab a seat at a table of four and immerse yourself in the ultimate first-person multiplayer online experience where cunning and trickery are the name of the game.",
       gameModesTitle: "Game Modes",
-      cardModeTitle: "Card Mode",
+      cardModeTitle: "Liar's Deck",
       cardModeSteps: [
         "Players take turns playing a card face down and declaring its value. The value should match the table’s value. (e.g., \"King\" or \"Queen\").",
         "When a player lays down a card, they might be lying about its value. If you suspect a lie, you can call their bluff.",
         "If someone’s bluff is called and they were lying, they must play a round of Russian Roulette. Surviving one bullet out of 6 rounds of shells means you stay in the game; failing means game over for you.",
         "After Russian Roulette is played, the cards are reset, and the game continues.",
       ],
-      diceModeTitle: "Dice Mode",
+      diceModeTitle: "Devil's Deck",
       diceModeSteps: [
-        "Roll your dice. No one can see your roll, but everyone’s watching your next move.",
-        "On your turn, make a bid predicting the total number of dice on the table, showing a specific face (e.g., \"There are five 3’s\"). The next player must either raise the bid by increasing the number of dice or the face value (e.g., \"There are six 4’s\") or challenge the previous bid.",
-        "Think someone’s lying? Challenge their bid! The loser drinks a bottle of poison.",
-        "Drink two bottles, and you’re out! The last one alive wins!",
+        "Same rules as before, but a lot more risky and interesting.",
+        "Everything is the same, but Joker doesn't count as any card now!",
+        "If a player plays a joker and another calls them a liar, everyone except the accused must shoot themselves.",
+        "Hmmm, this player placed three cards right away... It's definitely a lie. But what if it's a Joker?! - These thoughts will appear very often in this mode.",
       ],
     },
     pl: {
@@ -50,19 +50,19 @@ function Home() {
       deceiveText:
         "Usiądź przy stole dla czterech osób i zanurz się w pierwszoosobowej, wieloosobowej grze online, gdzie spryt i podstęp to klucz do zwycięstwa.",
       gameModesTitle: "Tryby gry",
-      cardModeTitle: "Tryb Kart",
+      cardModeTitle: "Talia Kłamcy",
       cardModeSteps: [
         'Gracze po kolei zagrywają kartę zakrytą i deklarują jej wartość. Powinna ona pasować do wartości obowiązującej na stole (np. "Król" lub "Dama").',
         "Gracz może kłamać o wartości karty. Podejrzewasz oszustwo? Rzuć mu wyzwanie!",
         "Jeśli blef został odkryty, oszust gra w Rosyjską Ruletkę. Przeżycie jednej kuli z 6 oznacza dalszą grę. Śmierć — koniec zabawy.",
         "Po Rosyjskiej Ruletce talia się resetuje, a gra toczy się dalej.",
       ],
-      diceModeTitle: "Tryb Kości",
+      diceModeTitle: "Diabelska Talia",
       diceModeSteps: [
-        "Rzuć kośćmi. Tylko ty widzisz wynik, ale wszyscy patrzą, co zrobisz.",
-        'W swojej turze zgłoś ofertę — przewidując łączną liczbę kości pokazujących daną wartość (np. "Jest pięć trójek"). Następny gracz może ją podbić (więcej kości lub wyższa wartość), albo zakwestionować.',
-        "Podejrzewasz kłamstwo? Zakwestionuj ofertę! Przegrany pije butelkę trucizny.",
-        "Wypijesz dwie — odpadasz. Ostatni żywy wygrywa!",
+        "Te same zasady co wcześniej, ale o wiele bardziej ryzykowne i interesujące.",
+        "Wszystko jest takie samo, ale Joker nie liczy się już jako żadna karta!",
+        "Jeśli gracz zagra Jokera, a inny nazwie go kłamcą, wszyscy oprócz oskarżonego muszą się postrzelić",
+        "Hmmm, ten gracz od razu położył trzy karty... To na pewno kłamstwo. Ale co jeśli to Joker?! – Takie myśli będą się często pojawiać w tym trybie.",
       ],
     },
   }
@@ -115,11 +115,11 @@ function Home() {
             </div>
           </div>
 
-        <Link to="/play" className="mt-1 bg-orange-600 hover:bg-orange-800 px-10 py-3 rounded text-lg font-semibold transition">
+        <Link to="/play" className="mt-1 bg-green-700 hover:bg-green-600 px-10 py-3 rounded text-lg font-semibold transition">
           {text[lang].play}
         </Link>
       </main>
-      <Footer />
+      <Footer lang={lang} />
     </div>
   )
 }
